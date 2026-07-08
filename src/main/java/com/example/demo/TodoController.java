@@ -13,7 +13,7 @@ public class TodoController {
     @Autowired
     private TodoService todoService;
         @PostMapping("/Create")
-        ResponseEntity<Todo>  CreateUser(Todo todo){
+        ResponseEntity<Todo>  CreateUser(@RequestBody Todo todo){
             return new ResponseEntity<>(todoService.Create(todo), HttpStatus.CREATED);
         }
         @GetMapping("/list")
@@ -26,7 +26,7 @@ public class TodoController {
             return ResponseEntity.noContent().build(); // 204 No Content
         }
         @PutMapping("/put/{id}")
-        public ResponseEntity<Todo> put( @PathVariable Integer id,Todo updatedTodo) {
+        public ResponseEntity<Todo> put( @PathVariable Integer id, @RequestBody  Todo updatedTodo) {
             return  new ResponseEntity<>(todoService.update(id, updatedTodo), HttpStatus.OK);
         }
     }
