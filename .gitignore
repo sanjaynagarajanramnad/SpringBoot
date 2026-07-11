@@ -1,5 +1,9 @@
 HELP.md
-target/
+target/classes/com/
+target/geneated-sources/
+target/geneated-test-sources/
+target/test-classes/
+
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
